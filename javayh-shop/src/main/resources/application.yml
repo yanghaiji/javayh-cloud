@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: javayh-shop
+
+server:
+  port: 8094
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+
+security:
+  oauth2:
+    resource:
+      id: javayh-shop
+      user-info-uri: http://localhost:8091/auth/javayh/member
+      prefer-token-info: false
