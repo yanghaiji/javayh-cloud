@@ -1,18 +1,20 @@
 package com.javayh.dao;
 
-import com.javayh.entity.Permission;
+import com.javayh.entity.SysPermission;
+import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
+import javax.annotation.ManagedBean;
+import java.util.Set;
 
 /**
- * @author Yang HaiJi, 2019-05-17
- * @version Araf v1.0
+ * @author Dylan Yang
+ * @Description: TODO
+ * @Title: PermissionDao
+ * @ProjectName javayh-oauth2
+ * @date 2019/5/18 17:07
  */
+@Mapper
 public interface PermissionDao {
-    /**
-     * 根据角色id查找权限列表
-     * @param roleId 角色id
-     * @return 权限列表
-     */
-    List<Permission> findByRoleId(Integer roleId);
+
+    Set<SysPermission> findByRoleId(Integer roleId);
 }

@@ -2,7 +2,6 @@ package com.javayh.controller;
 
 import com.javayh.entity.Result;
 import com.javayh.entity.ResultCode;
-import com.javayh.service.MyUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
 import org.springframework.web.bind.annotation.DeleteMapping;

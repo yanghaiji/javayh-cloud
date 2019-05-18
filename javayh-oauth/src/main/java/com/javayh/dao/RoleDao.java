@@ -1,18 +1,25 @@
 package com.javayh.dao;
 
-import com.javayh.entity.Role;
+import com.javayh.entity.SysRole;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Set;
 
 /**
- * @author Yang HaiJi, 2019-05-17
- * @version Araf v1.0
+ * @author Dylan Yang
+ * @Description: TODO
+ * @Title: RoleDao
+ * @ProjectName javayh-oauth2
+ * @date 2019/5/18 16:56
  */
+@Mapper
 public interface RoleDao {
     /**
-     * 根据用户id查找角色列表
-     * @param memberId 用户id
-     * @return 角色列表
+     * 查询角色
+     * @param userId
+     * @return
      */
-    List<Role> findByMemberId(Integer memberId);
+    Set<SysRole> findByUserId(Integer userId);
 }
+

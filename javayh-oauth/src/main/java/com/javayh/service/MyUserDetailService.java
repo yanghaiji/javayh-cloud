@@ -1,9 +1,9 @@
 package com.javayh.service;
 
 import com.javayh.dao.UserDao;
-import com.javayh.entity.Permission;
-import com.javayh.entity.Role;
-import com.javayh.entity.SysUser;
+import com.javayh.entity.SysPermission;
+import com.javayh.entity.SysRole;
+import com.javayh.vo.SysUserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import sun.plugin2.util.SystemUtil;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -29,8 +28,8 @@ public class MyUserDetailService  implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String memberName) throws UsernameNotFoundException {
-        SysUser member = userDao.findByMemberName(memberName);
-        if (member == null) {
+        SysUserVO sysUserVO = userDao.findByUserName(memberName);
+        if (sysUserVO == null) {
             throw new UsernameNotFoundException(memberName);
         }
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
@@ -42,17 +41,17 @@ public class MyUserDetailService  implements UserDetailsService {
         boolean credentialsNonExpired = true;
         // 锁定性 :true:未锁定 false:已锁定
         boolean accountNonLocked = true;
-        for (Role role : member.getRoles()) {
+        for (SysRole role : sysUserVO.getSysRoles()) {
             //角色必须是ROLE_开头，可以在数据库中设置
             GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getRoleName());
             grantedAuthorities.add(grantedAuthority);
             //获取权限
-            for (Permission permission : role.getPermissions()) {
-                GrantedAuthority authority = new SimpleGrantedAuthority(permission.getUri());
+            for (SysPermission permission : role.getSysPermissions()) {
+                GrantedAuthority authority = new SimpleGrantedAuthority(permission.getPermissionUri());
                 grantedAuthorities.add(authority);
             }
         }
-        User user = new User(member.getMemberName(), member.getPassword(),
+        User user = new User(sysUserVO.getUsername(), sysUserVO.getPassword(),
                 enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, grantedAuthorities);
         return user;
     }

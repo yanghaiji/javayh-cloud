@@ -31,8 +31,8 @@ zuul:
     eager-load:
       enabled: true
   host:
-    connect-timeout-millis: 3000
-    socket-timeout-millis: 3000
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
   add-proxy-headers: true
 
 #---------------------OAuth2---------------------
@@ -48,8 +48,8 @@ security:
 
 #----------------------超时配置-------------------
 ribbon:
-  ReadTimeout: 200000
-  ConnectTimeout: 200000
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
   MaxAutoRetries: 2
   MaxAutoRetriesNextServer: 2
   eureka:
@@ -62,4 +62,4 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 3500
+            timeoutInMilliseconds: 60000
