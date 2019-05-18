@@ -34,7 +34,7 @@ INSERT INTO `sys_permission` VALUES ('1', 'query', '2019-05-18 14:46:36', null);
 INSERT INTO `sys_permission` VALUES ('2', 'add', '2019-05-18 14:46:45', null);
 INSERT INTO `sys_permission` VALUES ('3', 'del', '2019-05-18 14:46:58', null);
 INSERT INTO `sys_permission` VALUES ('4', 'update', '2019-05-18 14:47:07', null);
-INSERT INTO `sys_permission` VALUES ('5', 'current', '2019-05-18 14:47:25', null);
+INSERT INTO `sys_permission` VALUES ('5', 'all', '2019-05-18 14:47:25', null);
 
 -- ----------------------------
 -- Table structure for sys_role

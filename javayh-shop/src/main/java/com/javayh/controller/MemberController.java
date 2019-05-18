@@ -22,7 +22,7 @@ public class MemberController {
         return "hello";
     }
 
-    @GetMapping("current")
+    @GetMapping("all")
     public Principal user(Principal principal) {
         return principal;
     }
