@@ -1,6 +1,6 @@
 package com.javayh.service;
 
-import com.javayh.dao.UserDao;
+import com.javayh.mapper.UserDao;
 import com.javayh.entity.SysPermission;
 import com.javayh.entity.SysRole;
 import com.javayh.vo.SysUserVO;

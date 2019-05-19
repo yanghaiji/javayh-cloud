@@ -1,0 +1,11 @@
+mapper:
+  mappers: com.javayh.mybatis.mapper.BaseMapper
+  not-empty: false
+  identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params:
+    count: countSql

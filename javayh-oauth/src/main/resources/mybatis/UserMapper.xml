@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.javayh.dao.UserDao">
+<mapper namespace="com.javayh.mapper.UserDao">
     <resultMap id="baseResultMap" type="com.javayh.vo.SysUserVO">
         <id property="id" column="id" jdbcType="INTEGER" />
         <result property="username" column="username" jdbcType="VARCHAR" />
         <result property="password" column="password" jdbcType="VARCHAR" />
-        <collection property="sysRoles" fetchType="eager" column="id" select="com.javayh.dao.RoleDao.findByUserId"></collection>
+        <collection property="sysRoles" fetchType="eager" column="id" select="com.javayh.mapper.RoleDao.findByUserId"></collection>
     </resultMap>
     <select id="findByUserName" parameterType="java.lang.String" resultMap="baseResultMap">
         SELECT

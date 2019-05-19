@@ -1,9 +1,8 @@
-package com.javayh.dao;
+package com.javayh.mapper;
 
 import com.javayh.entity.SysPermission;
 import org.apache.ibatis.annotations.Mapper;
 
-import javax.annotation.ManagedBean;
 import java.util.Set;
 
 /**

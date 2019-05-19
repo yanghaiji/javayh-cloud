@@ -1,9 +1,8 @@
-package com.javayh.dao;
+package com.javayh.mapper;
 
 import com.javayh.entity.SysRole;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
 import java.util.Set;
 
 /**

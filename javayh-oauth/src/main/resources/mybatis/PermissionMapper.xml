@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.javayh.dao.PermissionDao">
+<mapper namespace="com.javayh.mapper.PermissionDao">
 
     <select id="findByRoleId" parameterType="java.lang.Integer" resultType="com.javayh.entity.SysPermission">
         SELECT

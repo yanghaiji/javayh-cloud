@@ -1,8 +1,7 @@
 package com.javayh;
 
-import com.javayh.dao.UserDao;
+import com.javayh.mapper.UserDao;
 import com.javayh.vo.SysUserVO;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

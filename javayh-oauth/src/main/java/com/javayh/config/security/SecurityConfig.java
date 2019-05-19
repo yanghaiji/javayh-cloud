@@ -1,6 +1,5 @@
 package com.javayh.config.security;
 
-import com.javayh.dao.UserDao;
 import com.javayh.service.MyUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

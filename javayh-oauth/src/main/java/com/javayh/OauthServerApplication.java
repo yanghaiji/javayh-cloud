@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("com.javayh.dao")
+@MapperScan("com.javayh.mapper")
 public class OauthServerApplication {
 
     public static void main(String[] args) {
