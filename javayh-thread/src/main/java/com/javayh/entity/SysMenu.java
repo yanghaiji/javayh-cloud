@@ -2,6 +2,8 @@ package com.javayh.entity;
 
 import lombok.Data;
 
+import javax.persistence.Id;
+
 /**
  * @author Dylan Yang
  * @Description: SysMenu
@@ -11,8 +13,10 @@ import lombok.Data;
  */
 @Data
 public class SysMenu {
+    @Id
     private String id;
     private String code;
     private String pcode;
+
 }
 

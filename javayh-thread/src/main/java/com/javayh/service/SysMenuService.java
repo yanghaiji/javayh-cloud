@@ -2,6 +2,7 @@ package com.javayh.service;
 
 import com.javayh.entity.SysMenu;
 import com.javayh.mapper.SysMeunMapper;
+import com.javayh.mybatis.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ import java.util.List;
  * @date 2019/5/19 21:22
  */
 @Service
-public class SysMenuService  {
+public class SysMenuService  extends BaseService {
     @Autowired
     private SysMeunMapper sysMeunMapper;
 

@@ -31,13 +31,18 @@ public class SysMenuController {
     public Result query(){
         Result result = new Result();
         PageHelper.startPage(1,10);
-        List<SysMenu> query = sysMenuService.query();
-        PageInfo<SysMenu> sysMenuPageInfo = new PageInfo<>(query);
+//        List<SysMenu> query = sysMenuService.query();
+        List<SysMenu> all = sysMenuService.findAll();
+        PageInfo<SysMenu> sysMenuPageInfo = new PageInfo<>(all);
         result.setCode(ResultCode.SUCCESS.getCode());
         result.setMessage("查询成功");
         result.setData(sysMenuPageInfo);
         return result;
     }
 
+    @GetMapping(value = "tree")
+    public void getTree(){
+
+    }
 }
 
