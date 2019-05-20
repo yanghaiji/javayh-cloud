@@ -7,11 +7,12 @@ import tk.mybatis.mapper.common.MySqlMapper;
 
 /**
  * @author Dylan Yang
- * @Description: BaseMapper
- * @Title: BaseMapper
+ * @Description: AbstractMapper
+ * @Title: AbstractMapper
  * @ProjectName javayh-oauth2
- * @date 2019/5/19 19:54
+ * @date 2019/5/20 19:34
  */
-public interface BaseMapper<T> extends Mapper<T>, MySqlMapper<T>,ConditionMapper<T>,IdsMapper<T> {
+public interface AbstractMapper<T> extends Mapper<T>,
+        MySqlMapper<T>,ConditionMapper<T>,IdsMapper<T> {
 }
 
