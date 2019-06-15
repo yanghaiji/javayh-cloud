@@ -12,6 +12,7 @@
     <artifactId>javayh-oauth2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>javayh-oauth2</name>
+    <packaging>pom</packaging>
     <description>javayh-oauth2</description>
 
     <modules>
@@ -21,6 +22,7 @@
         <module>javayh-zuul</module>
         <module>javayh-mybatis</module>
         <module>javayh-commons</module>
+        <module>javayh-elasticsearch</module>
     </modules>
 
     <properties>
