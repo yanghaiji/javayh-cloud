@@ -32,7 +32,7 @@ public class SysMenuController {
         Result result = new Result();
         PageHelper.startPage(1,10);
 //        List<SysMenu> query = sysMenuService.query();
-        List<SysMenu> all = sysMenuService.findAll();
+        List<SysMenu> all = sysMenuService.query();
         PageInfo<SysMenu> sysMenuPageInfo = new PageInfo<>(all);
         result.setCode(ResultCode.SUCCESS.getCode());
         result.setMessage("查询成功");

@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2019/5/19 21:22
  */
 @Service
-public class SysMenuService  extends BaseService {
+public class SysMenuService{
     @Autowired
     private SysMeunMapper sysMeunMapper;
 

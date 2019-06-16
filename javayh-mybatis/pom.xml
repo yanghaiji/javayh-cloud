@@ -14,9 +14,6 @@
     <name>javayh-mybatis</name>
     <packaging>jar</packaging>
     <description>javayh-mybatis</description>
-    <modules>
-        <module>../javayh-thread</module>
-    </modules>
     <properties>
         <java.version>1.8</java.version>
     </properties>
