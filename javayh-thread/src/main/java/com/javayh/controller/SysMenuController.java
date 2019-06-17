@@ -29,15 +29,11 @@ public class SysMenuController {
 
     @GetMapping(value = "query")
     public Result query(){
-        Result result = new Result();
         PageHelper.startPage(1,10);
 //        List<SysMenu> query = sysMenuService.query();
         List<SysMenu> all = sysMenuService.query();
         PageInfo<SysMenu> sysMenuPageInfo = new PageInfo<>(all);
-        result.setCode(ResultCode.SUCCESS.getCode());
-        result.setMessage("查询成功");
-        result.setData(sysMenuPageInfo);
-        return result;
+        return Result.javaYhQuerySuccess(sysMenuPageInfo);
     }
 
     @GetMapping(value = "tree")
