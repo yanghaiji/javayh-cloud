@@ -1,5 +1,8 @@
 package com.javayh.service;
 
+import com.javayh.aop.OperationType;
+import com.javayh.aop.OperationUnit;
+import com.javayh.aop.WebLogAspect;
 import com.javayh.entity.SysMenu;
 import com.javayh.mapper.SysMeunMapper;
 import com.javayh.mybatis.service.BaseService;
@@ -24,6 +27,7 @@ public class SysMenuService{
      * 查询所有菜单
      * @return
      */
+    @WebLogAspect(detail="查询所有菜单",level = 3,operationType =OperationType.SELECT,operationUnit = OperationUnit.UNKNOWN)
     public List<SysMenu> query(){
         return sysMeunMapper.selectAll();
     }
