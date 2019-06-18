@@ -4,10 +4,15 @@ import lombok.Data;
 
 @Data
 public class Result {
-
     private int code;
     private String message;
     private Object data;
+    /*消息*/
+    private static String query = "query.success";
+    private static String insert = "insert.success";
+    private static String update = "update.success";
+    private static String delete = "delete.success";
+    private static String failed = "failed";
 
     public Result() {
     }
@@ -24,14 +29,13 @@ public class Result {
     }
 
 
-
     /**
      * 查询成功
      * @param data
      * @return
      */
     public static Result javaYhQuerySuccess(Object data){
-        return new Result(ResultCode.SUCCESS.getCode(),ResultCode.SUCCESS.getMessage(),data);
+        return new Result(ResultCode.SUCCESS.getCode(),query,data);
     }
 
     /**
@@ -40,7 +44,7 @@ public class Result {
      * @return
      */
     public static Result javaYhInsertSuccess(Object data){
-        return new Result(ResultCode.SUCCESS.getCode(),ResultCode.SUCCESS.getMessage(),data);
+        return new Result(ResultCode.SUCCESS.getCode(),insert,data);
     }
 
 
@@ -50,7 +54,7 @@ public class Result {
      * @return
      */
     public static Result javaYhUpdateSuccess(Object data){
-        return new Result(ResultCode.SUCCESS.getCode(),ResultCode.SUCCESS.getMessage(),data);
+        return new Result(ResultCode.SUCCESS.getCode(),update,data);
     }
 
     /**
@@ -59,7 +63,7 @@ public class Result {
      * @return
      */
     public static Result javaYhDeleteSuccess(Object data){
-        return new Result(ResultCode.SUCCESS.getCode(),ResultCode.SUCCESS.getMessage(),data);
+        return new Result(ResultCode.SUCCESS.getCode(),delete,data);
     }
 
     /**
@@ -68,9 +72,6 @@ public class Result {
      * @return
      */
     public static Result javaYhResultFailed(Object data){
-        return new Result(ResultCode.FAILED.getCode(),ResultCode.FAILED.getMessage(),data);
+        return new Result(ResultCode.FAILED.getCode(),failed,data);
     }
-
-
-
 }

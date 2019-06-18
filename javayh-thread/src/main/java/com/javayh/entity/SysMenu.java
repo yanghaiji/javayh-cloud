@@ -12,7 +12,7 @@ import javax.persistence.Id;
  * @date 2019/5/19 18:29
  */
 @Data
-public class SysMenu {
+public class SysMenu extends Pages{
     @Id
     private String id;
     private String code;

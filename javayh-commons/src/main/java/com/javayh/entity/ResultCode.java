@@ -7,10 +7,12 @@ package com.javayh.entity;
  */
 public enum ResultCode {
     //处理成功
-    SUCCESS(200, "Successful"),
+    SUCCESSTWO(200, "Successful"),
+    SUCCESS(1),
 
     //处理失败
-    FAILED(500, "Failed"),
+    FAILEDTWO(500, "Failed"),
+    FAILED(0),
 
     //未登录
     NOT_LOGIN(401, "not login"),
@@ -35,6 +37,9 @@ public enum ResultCode {
 
     private String message;
 
+    ResultCode(int code) {
+        this.code = code;
+    }
     ResultCode(int code, String message) {
         this.code = code;
         this.message = message;
