@@ -14,7 +14,7 @@ import java.io.Serializable;
  * @date 2019/6/15 15:46
  */
 @Data
-@Document(indexName = "esTest",type = "sys_es")
+@Document(indexName = "javayh",type = "sys_es")
 public class EsEntiy implements Serializable {
     @Id
     private String esId;

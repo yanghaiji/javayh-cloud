@@ -1,6 +1,7 @@
 package com.javayh.controller;
 
 import com.javayh.entity.EsEntiy;
+import com.javayh.entity.Result;
 import com.javayh.exception.BaseException;
 import com.javayh.service.EsService;
 import org.apache.commons.lang3.StringUtils;
@@ -28,8 +29,8 @@ public class EsController {
      * @return
      */
     @PostMapping(value = "save")
-    public EsEntiy save(@RequestBody EsEntiy esEntiy){
-        return esService.save(esEntiy);
+    public Result save(@RequestBody EsEntiy esEntiy){
+        return Result.javaYhInsertSuccess(esService.save(esEntiy));
     }
 
     /**
@@ -38,8 +39,8 @@ public class EsController {
      * @return
      */
     @GetMapping(value = "findCode/{code}")
-    public EsEntiy findbyEs(@PathVariable String code){
-        return esService.findbyEs(code);
+    public Result findbyEs(@PathVariable String code){
+        return Result.javaYhQuerySuccess(esService.findbyEs(code));
     }
 }
 
