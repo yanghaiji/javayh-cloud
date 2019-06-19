@@ -54,5 +54,5 @@ mybatis:
     cache-enabled: true #开启二级缓存
     call-setters-on-nulls: true #map空列不显示问题
   mapper-locations:
-  - classpath:mybatis/*.xml
+  - classpath:mybatis/*.mapper
 

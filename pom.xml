@@ -23,6 +23,7 @@
         <module>javayh-mybatis</module>
         <module>javayh-commons</module>
         <module>javayh-elasticsearch</module>
+        <module>javayh-mybatisplus</module>
     </modules>
 
     <properties>
@@ -37,6 +38,8 @@
         <mybatis.version>1.3.2</mybatis.version>
         <pagehelper.version>RELEASE</pagehelper.version>
         <tk.mybatis.version>RELEASE</tk.mybatis.version>
+        <mybatis.puls.version>3.1.1</mybatis.puls.version>
+        <mybatis.puls.generator.version>3.1.1</mybatis.puls.generator.version>
     </properties>
 
     <dependencies>

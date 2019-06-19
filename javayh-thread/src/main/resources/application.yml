@@ -6,7 +6,7 @@ spring:
     name: javayh-thread
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/guns?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
     username: root
     password: 1219320
   druid:
@@ -50,5 +50,5 @@ mybatis:
     cache-enabled: true #开启二级缓存
     call-setters-on-nulls: true #map空列不显示问题
   mapper-locations:
-  - classpath:mybatis/*.xml
+  - classpath:mybatis/*.mapper
 

@@ -29,7 +29,7 @@ public class SysMenuController {
     private SysMenuService sysMenuService;
 
     @GetMapping(value = "query")
-    public Result query(SysMenu sysMenu){
+    public Result query(SysMenuVO sysMenu){
         PageHelper.startPage(sysMenu.getPageNum(),sysMenu.getPageSize());
         List<SysMenu> all = sysMenuService.query();
         PageInfo<SysMenu> sysMenuPageInfo = new PageInfo<>(all);

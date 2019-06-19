@@ -2,6 +2,8 @@ package com.javayh.entity;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @author Dylan Yang
  * @Description: Pages
@@ -12,8 +14,11 @@ import lombok.Data;
 @Data
 public class Pages {
     /*当前页*/
-    private int pageNum;
+    private long pageCurrent;
     /*条数*/
-    private int pageSize;
+    private long pageSize;
+    /*排序*/
+    private String orderBy;
+    private List<String> orderBys;
 }
 
