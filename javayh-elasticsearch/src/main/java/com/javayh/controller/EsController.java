@@ -2,13 +2,9 @@ package com.javayh.controller;
 
 import com.javayh.entity.EsEntiy;
 import com.javayh.entity.Result;
-import com.javayh.exception.BaseException;
 import com.javayh.service.EsService;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 /**
  * @author Dylan Yang
