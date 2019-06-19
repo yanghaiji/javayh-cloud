@@ -40,6 +40,7 @@
         <tk.mybatis.version>RELEASE</tk.mybatis.version>
         <mybatis.puls.version>3.1.1</mybatis.puls.version>
         <mybatis.puls.generator.version>3.1.1</mybatis.puls.generator.version>
+        <velocity.engine.version>2.1</velocity.engine.version>
     </properties>
 
     <dependencies>
