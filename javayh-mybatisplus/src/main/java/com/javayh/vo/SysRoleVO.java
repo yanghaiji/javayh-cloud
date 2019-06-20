@@ -1,6 +1,6 @@
 package com.javayh.vo;
 
-import com.javayh.entity.Pages;
+import com.javayh.entity.PageMp;
 import lombok.Data;
 
 /**
@@ -11,7 +11,7 @@ import lombok.Data;
  * @date 2019/6/18 21:42
  */
 @Data
-public class SysRoleVO extends Pages{
+public class SysRoleVO extends PageMp {
     /**
      * 序号
      */

@@ -6,20 +6,20 @@ import java.util.List;
 
 /**
  * @author Dylan Yang
- * @Description: Pages
- * @Title: Pages
+ * @Description: PageMp
+ * @Title: PageMp
  * @ProjectName javayh-oauth2
- * @date 2019/6/18 14:54
+ * @date 2019/6/20 12:27
  */
 @Data
-public class Pages {
+public class PageMp {
     /**
      * 当前页
-     * M  : pageNum
+     * MP : pageCurrent
      */
-    private int pageNum;
+    private long pageCurrent;
     /*条数*/
-    private int pageSize;
+    private long pageSize;
     /*排序*/
     private String orderBy;
     private List<String> orderBys;
