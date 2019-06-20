@@ -106,7 +106,7 @@ public class SysMenuService extends BaseService<SysMenu>{
     }
 
     /**
-     * 又返回值得线程
+     * 有返回值得线程
      * @return
      */
     public Future<List<SysMenu>> queryFutureJdkSubmit(SysMenu sysMenu) {
