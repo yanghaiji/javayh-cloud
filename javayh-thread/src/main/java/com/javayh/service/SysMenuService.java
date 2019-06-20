@@ -6,13 +6,16 @@ import com.javayh.aop.WebLogAspect;
 import com.javayh.entity.SysMenu;
 import com.javayh.mapper.SysMeunMapper;
 import com.javayh.mybatis.service.BaseService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
 /**
@@ -22,11 +25,15 @@ import java.util.concurrent.Future;
  * @ProjectName javayh-oauth2
  * @date 2019/5/19 21:22
  */
+@Slf4j
 @Service
 public class SysMenuService extends BaseService<SysMenu>{
 
     @Autowired
     private SysMeunMapper sysMeunMapper;
+
+    @Autowired
+    private ExecutorService executorService;
 
     /**
      * 查询所有菜单
@@ -44,12 +51,12 @@ public class SysMenuService extends BaseService<SysMenu>{
      */
     @Async
     public Future<String> delete(Integer deleteId){
-        SysMenu sysMenu = (SysMenu)this.findById(deleteId);
+        SysMenu sysMenu = this.findById(deleteId);
         if(sysMenu == null){
             Future<String> objectFuture = new AsyncResult<>("delete filed");
             return objectFuture;
         }else {
-            SysMenu sysMenuDelete = (SysMenu)this.findById(deleteId);
+            SysMenu sysMenuDelete = this.findById(deleteId);
             if(sysMenuDelete == null){
                 Future<String> objectFuture = new AsyncResult<>("delete filed");
                 return objectFuture;
@@ -71,6 +78,55 @@ public class SysMenuService extends BaseService<SysMenu>{
     public Future<List<SysMenu>> queryFuture() {
         Future<List<SysMenu>> future = new AsyncResult<>(sysMeunMapper.selectAll());
         return future;
+    }
+
+    /*-----------------------------------------JDK------------------------------------------*/
+
+    /**
+     * 无返回值
+     * @param id
+     */
+    public void deleteFutureJdk(String id) {
+        try {
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+                    int i = sysMeunMapper.deleteByIds(id);
+                    log.info("delete num : " + i);
+                    log.info("thread id : " + Thread.currentThread().getId());
+                    log.info("thread name : " + Thread.currentThread().getName());
+                    log.info("thread thread group : " + Thread.currentThread().getThreadGroup());
+                }
+            });
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            executorService.shutdown();
+        }
+    }
+
+    /**
+     * 又返回值得线程
+     * @return
+     */
+    public Future<List<SysMenu>> queryFutureJdkSubmit(SysMenu sysMenu) {
+        Future<List<SysMenu>>  submit = null;
+        try {
+            Callable<List<SysMenu>> callable = new Callable<List<SysMenu>>() {
+                @Override
+                public List<SysMenu> call() {
+                    List<SysMenu> sysMenus = sysMeunMapper.select(sysMenu);
+                    log.info("thread name : " + Thread.currentThread().getName());
+                    return sysMenus;
+                }
+            };
+            submit = executorService.submit(callable);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            executorService.shutdown();
+        }
+        return submit;
     }
 
 }

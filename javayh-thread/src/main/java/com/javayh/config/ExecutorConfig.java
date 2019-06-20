@@ -20,6 +20,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 @EnableAsync
 @Configuration
+@ComponentScan(value = "com.javayh.service.*")
 public class ExecutorConfig implements AsyncConfigurer {
 
     @Bean

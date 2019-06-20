@@ -7,10 +7,7 @@ import com.javayh.entity.SysMenu;
 import com.javayh.service.SysMenuService;
 import com.javayh.vo.SysMenuVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -66,5 +63,42 @@ public class SysMenuController {
         List<SysMenu> all = sysMenuService.queryFuture().get();
         return Result.javaYhQuerySuccess(all);
     }
+
+    /*-----------------------------------------JDK-----------------------------------------------*/
+
+    /**
+     * 删除
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "deleteFutureJdk/{id}")
+    public Result deleteFutureJdk(@PathVariable String id) {
+        SysMenu sysMenu = sysMenuService.findById(Integer.valueOf(id));
+        if(sysMenu == null){
+            return Result.javaYhResultFailed("menu is null");
+        }else {
+            sysMenuService.deleteFutureJdk(id);
+            SysMenu sysMenuTwo = sysMenuService.findById(Integer.valueOf(id));
+            if(sysMenuTwo == null){
+                return Result.javaYhResultFailed("menu delete failed");
+            }
+            return Result.javaYhQuerySuccess("menu delete success");
+        }
+    }
+
+    /**
+     * 查询对应菜单
+     * @param sysMenu
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
+    @PostMapping(value = "queryFutureJdkSubmit")
+    public Result queryFutureJdk(@RequestBody SysMenu sysMenu) throws ExecutionException, InterruptedException {
+        List<SysMenu> listFuture = sysMenuService.queryFutureJdkSubmit(sysMenu).get();
+        return Result.javaYhQuerySuccess(listFuture);
+    }
+
+
 }
 
