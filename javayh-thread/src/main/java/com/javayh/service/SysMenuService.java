@@ -17,6 +17,9 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * @author Dylan Yang
@@ -34,6 +37,15 @@ public class SysMenuService extends BaseService<SysMenu>{
 
     @Autowired
     private ExecutorService executorService;
+
+    //创建一个读写锁实例
+    private ReadWriteLock rw = new ReentrantReadWriteLock();
+    //创建一个读锁
+    private Lock r = rw.readLock();
+    //创建一个写锁
+    private Lock w = rw.writeLock();
+
+
 
     /**
      * 查询所有菜单
@@ -76,8 +88,20 @@ public class SysMenuService extends BaseService<SysMenu>{
      */
     @Async
     public Future<List<SysMenu>> queryFuture() {
-        Future<List<SysMenu>> future = new AsyncResult<>(sysMeunMapper.selectAll());
-        return future;
+        Future<List<SysMenu>> future =null;
+        try {
+            r.lock();
+            log.info("thread id : " + Thread.currentThread().getId());
+            log.info("thread name : " + Thread.currentThread().getName());
+            log.info("thread thread group : " + Thread.currentThread().getThreadGroup());
+            future = new AsyncResult<>(sysMeunMapper.selectAll());
+            Thread.sleep(3000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            r.unlock();
+            return future;
+        }
     }
 
     /*-----------------------------------------JDK------------------------------------------*/
