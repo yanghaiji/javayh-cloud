@@ -1,11 +1,12 @@
 package com.javayh.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.javayh.entity.SysRole;
 import com.javayh.vo.SysRoleVO;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * <p>
@@ -21,5 +22,6 @@ public interface ISysRoleService extends IService<SysRole> {
 
     IPage<SysRole> queryPageThree(SysRoleVO vo);
 
-    SysRole saveAll(SysRole sysRole);
+    @PostMapping(value = "save")
+    SysRole saveAll(@RequestBody SysRole sysRole);
 }

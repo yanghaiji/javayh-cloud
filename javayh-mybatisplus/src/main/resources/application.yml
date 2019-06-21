@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: javayh-thread
+    name: javayh-mybatismp
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/guns?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
