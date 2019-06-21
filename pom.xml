@@ -34,6 +34,10 @@
         <module>javayh-mybatisplus</module>
         <!--设计模式-->
         <module>javayh-patterns</module>
+        <!--缓存服务-->
+        <module>javayh-redis</module>
+        <!--Feign-->
+        <module>javayh-feign</module>
     </modules>
 
     <properties>
