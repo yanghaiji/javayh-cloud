@@ -16,14 +16,24 @@
     <description>javayh-oauth2</description>
 
     <modules>
+        <!--注册中心-->
         <module>javayh-eureka</module>
+        <!--权限注册服务-->
         <module>javayh-oauth</module>
+        <!--资源服务-->
         <module>javayh-shop</module>
+        <!--路由服务-->
         <module>javayh-zuul</module>
+        <!--持久层封装-->
         <module>javayh-mybatis</module>
+        <!--工具类-->
         <module>javayh-commons</module>
+        <!--搜索引擎-->
         <module>javayh-elasticsearch</module>
+        <!--MP-->
         <module>javayh-mybatisplus</module>
+        <!--设计模式-->
+        <module>javayh-patterns</module>
     </modules>
 
     <properties>
