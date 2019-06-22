@@ -38,6 +38,8 @@
         <module>javayh-redis</module>
         <!--Feign-->
         <module>javayh-feign</module>
+        <!--NIO-->
+        <module>javayh-nio</module>
     </modules>
 
     <properties>
