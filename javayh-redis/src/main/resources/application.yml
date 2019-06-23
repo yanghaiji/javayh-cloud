@@ -1,0 +1,26 @@
+
+server:
+  port: 8010
+spring:
+  application:
+    name: javayh-redis
+  http:
+      encoding:
+        charset: UTF-8
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  redis:
+    database: 0
+    port: 6379
+    host: 127.0.0.1
+    password:
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
