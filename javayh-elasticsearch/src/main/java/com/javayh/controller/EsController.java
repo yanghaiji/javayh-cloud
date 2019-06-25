@@ -38,5 +38,35 @@ public class EsController {
     public Result findbyEs(@PathVariable String code){
         return Result.javaYhQuerySuccess(esService.findbyEs(code));
     }
+
+    /**
+     * 删除
+     * @param id
+     * @return
+     */
+    @GetMapping(value = "deleteCode/{code}")
+    public Result deleteCode(@PathVariable("code") String id){
+        return Result.javaYhDeleteSuccess(esService.delete(id)== 1 ? "delete success" : "delete is faild");
+    }
+
+    /**
+     * 混合搜索
+     * @param content
+     * @return
+     */
+    @GetMapping(value = "querySearch")
+    public Result querySearch(String content){
+        return Result.javaYhQuerySuccess(esService.querySearch(content));
+    }
+
+    /**
+     * 高亮检索
+     * @param type
+     * @return
+     */
+    @GetMapping(value = "querySearchType")
+    public Result querySearchType(String type){
+        return Result.javaYhQuerySuccess(esService.querySearchType(type));
+    }
 }
 
