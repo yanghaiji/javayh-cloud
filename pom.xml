@@ -42,6 +42,8 @@
         <module>javayh-nio</module>
         <!--Admin-->
         <module>javayh-admin</module>
+        <!--Thread-->
+        <module>javayh-thread</module>
     </modules>
 
     <properties>
