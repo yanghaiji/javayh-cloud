@@ -7,7 +7,14 @@ spring:
   http:
     encoding:
     charset: UTF-8
-
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8012"   #指定SpringBootAdmin服务端地址
+        password: password
+        username: user
+        instance:
+          prefer-ip: true
 eureka:
   instance:
     prefer-ip-address: true
@@ -41,8 +48,15 @@ hystrix:
           thread:
             timeoutInMilliseconds: 60000
       circuitBreaker:
-        ##ÿ��3������
       requestVolumeThreshold: 3
 
-
+# Admin
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   #暴露所有的端点我们可以看到更多的服务实例相关信息，
+  endpoint:
+    health:
+      show-details: ALWAYS   #health endpoint是否必须显示全部细节
 
