@@ -1,0 +1,47 @@
+server:
+  port: 8012
+
+spring:
+  application:
+    name: javayh-admin
+  profiles:
+    active:
+      - secure
+
+eureka:
+  instance:
+    health-check-url-path: /actuator/health #应用实例的状态
+    hostname: localhost # eureka实例的主机名
+  client:
+    register-with-eureka: true #不把自己注册到eureka上
+    fetch-registry: true #不从eureka上来获取服务的注册信息--不检索服务
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8090/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #暴露所有的端点我们可以看到更多应用相关信息
+  endpoint:
+    health:
+      show-details: ALWAYS  #health endpoint是否必须显示全部细节
+---
+spring:
+  profiles: insecure
+
+---
+# admin登录的用户名和密码
+spring:
+  profiles: secure
+  security:
+    user:
+      name: admin
+      password: admin123
+
+ # 注册给eureka的时候告诉eureka自己的密码
+eureka:
+  instance:
+    metadata-map:
+      "user.name": ${spring.security.user.name}
+      "user.password": ${spring.security.user.password}
