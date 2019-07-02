@@ -44,6 +44,8 @@
         <module>javayh-admin</module>
         <!--Thread-->
         <module>javayh-thread</module>
+        <!--工作流 Activiti-->
+        <module>javayh-activiti</module>
     </modules>
 
     <properties>
@@ -62,6 +64,7 @@
         <mybatis.puls.generator.version>3.1.1</mybatis.puls.generator.version>
         <velocity.engine.version>2.1</velocity.engine.version>
         <admin-version>2.0.2</admin-version>
+        <activiti-version>6.0.0</activiti-version>
     </properties>
 
     <dependencies>
