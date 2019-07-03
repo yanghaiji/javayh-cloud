@@ -46,6 +46,8 @@
         <module>javayh-thread</module>
         <!--工作流 Activiti-->
         <module>javayh-activiti</module>
+        <!--Job-->
+        <module>javayh-job</module>
     </modules>
 
     <properties>
@@ -65,6 +67,7 @@
         <velocity.engine.version>2.1</velocity.engine.version>
         <admin-version>2.0.2</admin-version>
         <activiti-version>6.0.0</activiti-version>
+        <elastic.job.version>2.1.5</elastic.job.version>
     </properties>
 
     <dependencies>

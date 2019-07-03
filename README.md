@@ -20,6 +20,8 @@
 ##### `<!--NIO--> javayh-nio`
 ##### `<!--Admin--> javayh-admin`
 ##### `<!--Thread--> javayh-thread`
+##### `<!--Activiti--> javayh-activiti`
+##### `<!--Job--> javayh-job`
 #### 3.模块间关系
 ##### 3.1 权限验证
 具体流程查看:https://blog.csdn.net/weixin_38937840/article/details/90321037
