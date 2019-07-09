@@ -68,6 +68,7 @@
         <admin-version>2.0.2</admin-version>
         <activiti-version>6.0.0</activiti-version>
         <elastic.job.version>2.1.5</elastic.job.version>
+        <io.version>2.5</io.version>
     </properties>
 
     <dependencies>
@@ -114,7 +115,7 @@
         </plugins>
     </build>
     <!--阿里云搭建了一个国内镜像http://maven.aliyun.com，跑起来速度很快，可以进行配置-->
-    <repositories>
+    <!--<repositories>
         <repository>
             <id>nexus-aliyun</id>
             <name>nexus-aliyun</name>
@@ -126,5 +127,5 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories>-->
 </project>

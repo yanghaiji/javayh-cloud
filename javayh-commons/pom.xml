@@ -18,7 +18,19 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>nexus-aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <dependencies>
 
         <dependency>
@@ -53,6 +65,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.7</version>
         </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${io.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
