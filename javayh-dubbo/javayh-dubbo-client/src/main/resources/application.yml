@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: javayh-dubbo-client
+
+server:
+  port: 8022
+dubbo:
+  application:
+    name: javayh-dubbo-client
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  monitor:
+    protocol: registry

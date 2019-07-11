@@ -48,6 +48,11 @@
         <module>javayh-activiti</module>
         <!--Job-->
         <module>javayh-job</module>
+        <!--Dubbo-->
+        <module>javayh-dubbo</module>
+        <module>javayh-dubbo/javayh-dubbo-api</module>
+        <module>javayh-dubbo/javayh-dubbo-client</module>
+        <module>javayh-dubbo/javayh-dubbo-server</module>
     </modules>
 
     <properties>
@@ -69,6 +74,8 @@
         <activiti-version>6.0.0</activiti-version>
         <elastic.job.version>2.1.5</elastic.job.version>
         <io.version>2.5</io.version>
+        <dubbo.version>2.0.0</dubbo.version>
+        <zk.version>0.10</zk.version>
     </properties>
 
     <dependencies>
