@@ -21,7 +21,11 @@
 ##### `<!--Admin--> javayh-admin`
 ##### `<!--Thread--> javayh-thread`
 ##### `<!--Activiti--> javayh-activiti`
-##### `<!--Job--> javayh-job`
+##### `<!--dubbo--> javayh-job`
+##### `<!--dubbo--> javayh-dubbo`
+##### `<!--dubbo--> javayh-dubbo-api`
+##### `<!--dubbo--> javayh-dubbo-client`
+##### `<!--dubbo--> javayh-dubbo-server`
 #### 3.模块间关系
 ##### 3.1 权限验证
 具体流程查看:https://blog.csdn.net/weixin_38937840/article/details/90321037
@@ -42,7 +46,12 @@
 ##### `<!--注册中心--> javayh-eureka`
 ##### ` <!--Feign--> javayh-feign`
 ##### `<!--MybatisPlus--> javayh-mybatisplus`
-#### 3.4 其他
+##### 3.4 dubbo+zk+boot分布式治理
+#### `需启动：`
+##### `<!--生产者--> javayh-dubbo-server`
+##### `<!--消费者--> javayh-dubbo-client`
+##### 如果一直报错，请调大超时时间，根据个人电脑配置有关，找不到api，则需要利用maven install
+#### 3.5 其他
 #### `其他模块可单独启动测试，看到控制台报错时，不要慌张，这时启动javayh-eureka即可`
 
 
