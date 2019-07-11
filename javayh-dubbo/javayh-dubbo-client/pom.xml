@@ -24,14 +24,14 @@
         <dependency>
             <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>0.2.0</version>
+            <version>${dubbo.version}</version>
         </dependency>
         <!--引入zookeeper的客户端工具-->
         <!-- https://mvnrepository.com/artifact/com.github.sgroschupf/zkclient -->
         <dependency>
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
-            <version>0.1</version>
+            <version>${zk.version}</version>
         </dependency>
     </dependencies>
 
