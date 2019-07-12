@@ -48,15 +48,6 @@
         <module>javayh-activiti</module>
         <!--Job-->
         <module>javayh-job</module>
-        <!--Dubbo-->
-        <module>javayh-dubbo</module>
-        <module>javayh-dubbo/javayh-dubbo-api</module>
-        <module>javayh-dubbo/javayh-dubbo-client</module>
-        <module>javayh-dubbo/javayh-dubbo-server</module>
-        <module>javayh-dubbo/javayh-dubbo-admin</module>
-        <module>javayh-dubbo/javayh-dubbo-admin/dubbo-admin</module>
-        <module>javayh-dubbo/javayh-dubbo-admin/dubbo-monitor-simple</module>
-        <module>javayh-dubbo/javayh-dubbo-admin/dubbo-registry-simple</module>
     </modules>
 
     <properties>
