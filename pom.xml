@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.javayh</groupId>
-    <artifactId>javayh-oauth2</artifactId>
+    <artifactId>javayh-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>javayh-oauth2</name>
+    <name>javayh-cloud</name>
     <packaging>pom</packaging>
-    <description>javayh-oauth2</description>
+    <description>javayh-cloud</description>
 
     <modules>
         <!--注册中心-->
