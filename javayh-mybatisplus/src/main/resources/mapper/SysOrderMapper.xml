@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javayh.mapper.SysOrderMapper">
+
+    <update id="updateLock" parameterType="com.javayh.entity.SysOrder">
+        update
+          sys_order
+        set
+          order_type=#{orderType},
+          version= version+1
+        where
+          order_num=#{orderNum}
+        and
+          version = #{version}
+    </update>
+</mapper>
