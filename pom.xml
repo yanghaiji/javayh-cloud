@@ -48,8 +48,12 @@
         <module>javayh-activiti</module>
         <!--Job-->
         <module>javayh-job</module>
+        <!--MQ-->
+        <module>javayh-mq</module>
         <!--Kafka-->
-        <module>javayh-kafka</module>
+        <module>javayh-mq/javayh-kafka</module>
+        <!--RabbitMq-->
+        <module>javayh-mq/javayh-rabbit</module>
     </modules>
 
     <properties>
