@@ -1,4 +1,4 @@
-#MongoDB学习记录
+# MongoDB学习记录
 
 ## MongoRepository使用
     @Repository
@@ -84,7 +84,8 @@
                 .withIgnoreNullValues();//hu忽略null
     }
     
-##MongoTemplate 使用
+## MongoTemplate 使用
+
     public abstract class MongodbBaseDao<T extends Serializable>{
 
         /**
