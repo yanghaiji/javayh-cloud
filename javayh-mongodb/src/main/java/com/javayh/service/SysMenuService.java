@@ -1,13 +1,16 @@
 package com.javayh.service;
 
 import com.javayh.entity.SysMenu;
-import com.javayh.id.UuidUtils;
+import com.javayh.repository.MgRepository;
 import com.javayh.repository.SysMenuRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,11 +22,13 @@ import java.util.List;
  * @ProjectName javayh-cloud
  * @date 2019/7/21 0:30
  */
+@Slf4j
 @Service
 public class SysMenuService {
     @Autowired
     private SysMenuRepository sysMenuRepository;
-
+    @Autowired
+    private MgRepository mgRepository;
     /**
      * 新增
      * @param sysMenu
@@ -85,6 +90,20 @@ public class SysMenuService {
 //                .withMatcher("pcode", ExampleMatcher.GenericPropertyMatchers.regex()) // 查询
                 .withIgnoreNullValues();//hu忽略null
     }
+
+
+    /**
+     * 使用 MongoTemplate 实例
+     * @param id
+     * @return
+     */
+    public SysMenu find(String id){
+        Criteria criteria = new Criteria();
+        criteria.where("id").is(id);
+        Query query = Query.query(criteria);
+        return mgRepository.findOne(query);
+    }
+
 
 }
 

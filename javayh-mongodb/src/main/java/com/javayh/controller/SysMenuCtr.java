@@ -7,6 +7,7 @@ import com.javayh.service.SysMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -84,6 +85,9 @@ public class SysMenuCtr {
         return Result.javaYhQuerySuccess(sysMenuService.findPag(pageable));
     }
 
-
+    @GetMapping(value = "findIs/{id}")
+    public Result findIs(@PathVariable String id){
+        return Result.javaYhQuerySuccess(sysMenuService.find(id));
+    }
 }
 

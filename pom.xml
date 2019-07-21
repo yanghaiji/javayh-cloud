@@ -54,6 +54,8 @@
         <module>javayh-mq/javayh-kafka</module>
         <!--RabbitMq-->
         <module>javayh-mq/javayh-rabbit</module>
+        <!--mongoDB-->
+        <module>javayh-mongodb</module>
     </modules>
 
     <properties>
