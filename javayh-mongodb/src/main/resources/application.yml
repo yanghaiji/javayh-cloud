@@ -1,0 +1,37 @@
+
+server:
+  port: 8026
+  servlet:
+    context-path: /javayh/mongodb/
+spring:
+  application:
+    name: javayh-mongodb
+  data:
+    mongodb:
+      database: Dylan
+      host: localhost
+      port: 27017
+#‘ˆ«ø≈‰÷√
+#      option:
+#        min-connection-per-host: 0
+#        max-connection-per-host: 100
+#        threads-allowed-to-block-for-connection-multiplier: 5
+#        server-selection-timeout: 30000
+#        max-wait-time: 120000
+#        max-connection-idle-time: 0
+#        max-connection-life-time: 0
+#        connect-timeout: 10000
+#        socket-timeout: 10000
+#        socket-keep-alive: false
+#        ssl-enabled: false
+#        ssl-invalid-host-name-allowed: false
+#        always-use-m-beans: false
+#        heartbeat-socket-timeout: 20000
+#        heartbeat-connect-timeout: 20000
+#        min-heartbeat-frequency: 500
+#        heartbeat-frequency: 10000
+#        local-threshold: 15
+
+logging:
+  level:
+    org.springframework.data.mongodb.core: DEBUG
