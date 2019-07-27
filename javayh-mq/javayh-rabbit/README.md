@@ -24,3 +24,21 @@
 远程服务调用：有待学习。。。。
 
 详细说明请查看：https://blog.csdn.net/weixin_38937840/article/details/96591029
+
+## 一、RabbitMQ 安装（wind）
+
+### 下载 Erlang安装包
+> 由于rabbit基于Erlang，所以先安装
+> 安装完成后配置环境变量，并追加到PATH后
+> cdm 输入 erl 查看是否安装成功
+
+### 下载 RabbitMQ安装包
+> 安装完成后配置环境变量，并追加到PATH后
+> cdm 输入 rabbitmqctl status 查看是否安装成功
+> 成功则输入 rabbitmq-plugins enable rabbitmq_management 进行web插件安装
+
+### 所需要的安装包
+链接：https://pan.baidu.com/s/16SVHxuiZ08vj40QJCsEaYA 
+提取码：nm8q 
+
+

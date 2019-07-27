@@ -32,11 +32,14 @@ spring:
     virtual-host: /
     #消息发送确认回调
     publisher-confirms: true
-#    listener:
-#      simple:
-#        max-concurrency: 20
-#        concurrency: 10
-
+    publisher-returns: true
+    listener:
+      simple:
+        max-concurrency: 20 # 最大消费者数量
+        concurrency: 1      # 最小消费者数量
+        retry:
+          enabled: true     #是否支持重试
+        acknowledge-mode: manual #手动消费，默认是自动消费
 mybatis:
   type-aliases-package: com.javayh.entity
   configuration:

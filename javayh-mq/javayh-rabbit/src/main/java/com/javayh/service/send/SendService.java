@@ -1,6 +1,7 @@
 package com.javayh.service.send;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * @author Dylan Yang
@@ -9,7 +10,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
  * @ProjectName javayh-cloud
  * @date 2019/7/20 12:08
  */
-public interface SendService extends RabbitTemplate.ConfirmCallback {
+public interface SendService extends RabbitTemplate.ConfirmCallback , RabbitTemplate.ReturnCallback, InitializingBean {
     void sendMessage(Object message);
 }
 
