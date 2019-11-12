@@ -65,8 +65,15 @@
 ##### 如果一直报错，请调大超时时间，根据个人电脑配置有关，找不到api，则需要利用maven install
 #### 3.5 其他
 #### `其他模块可单独启动测试，看到控制台报错时，不要慌张，这时启动javayh-eureka即可`
+## 关注 Java有货领取更多资料
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20191112104505246.jpg)
+**如遇到问题可以联系小编。微信：372787553，互相学习**
 
+**技术博客：[https://blog.csdn.net/weixin_38937840](https://blog.csdn.net/weixin_38937840)**
 
+**SpringCloud学习代码： [https://github.com/Dylan-haiji/javayh-cloud](https://github.com/Dylan-haiji/javayh-cloud)**
 
+**Redis、Mongo、Rabbitmq、Kafka学习代码： [https://github.com/Dylan-haiji/javayh-middleware](https://github.com/Dylan-haiji/javayh-middleware)**
 
-### 遇到其他问题可以联系小编；微信：372787553
+**AlibabaCloud学习代码：[https://github.com/Dylan-haiji/javayh-cloud-nacos](https://github.com/Dylan-haiji/javayh-cloud-nacos)**
+**SpringBoot+SpringSecurity实现自定义登录学习代码：[https://github.com/Dylan-haiji/javayh-distribution](https://github.com/Dylan-haiji/javayh-distribution)**
