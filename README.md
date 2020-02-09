@@ -3,7 +3,7 @@
 <p align="center">
   <img src='https://img.shields.io/badge/license-Apache%202-4EB1BA.svg' alt='License'/>
   <img src="https://img.shields.io/badge/Spring%20Boot-2.0.3.RELEASE-blue" alt="Downloads"/>
-  <img src="https://img.shields.io/badge/Spring%20Cloud-Finchley.SR1-blue" alt="Downloads"/>
+  <img src="https://img.shields.io/badge/Spring%20Cloud%20Finchley.SR1-blue" alt="Downloads"/>
 </p>
 
 #### 本代码仅作为学习使用，如有错误还请多多包涵，大家可以将自己学习的代码进行上传，可以联系小编:372787553进行微信沟通
